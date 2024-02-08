@@ -388,11 +388,11 @@ Blockly.defineBlocksWithJsonArray([
         "options": [
           [
             "42",
-            "1"
+            "Ste1"
           ],
           [
             "28",
-            "2"
+            "Ste2"
           ]
         ]
       },
