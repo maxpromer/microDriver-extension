@@ -104,22 +104,24 @@ def initPCA9685():
 
 def setFreq(freq):
     # Constrain the frequency
-    prescaleval = 25000000;
-    prescaleval /= 4096;
-    prescaleval /= freq;
-    prescaleval -= 1;
+    prescaleval = 25000000
+    prescaleval /= 4096
+    prescaleval /= freq
+    prescaleval -= 1
     prescale = prescaleval; # Math.floor(prescaleval + 0.5);
-    oldmode = i2cRead(PCA9685_ADDRESS, MODE1);
-    newmode = (oldmode & 0x7F) | 0x10; # sleep
-    i2cWrite(PCA9685_ADDRESS, MODE1, newmode); # go to sleep
-    i2cWrite(PCA9685_ADDRESS, PRESCALE, prescale); # set the prescaler
-    i2cWrite(PCA9685_ADDRESS, MODE1, oldmode);
-    sleep_us(5000);
-    i2cWrite(PCA9685_ADDRESS, MODE1, oldmode | 0xa1);
+    oldmode = i2cRead(PCA9685_ADDRESS, MODE1)
+    newmode = (oldmode & 0x7F) | 0x10 # sleep
+    i2cWrite(PCA9685_ADDRESS, MODE1, newmode) # go to sleep
+    i2cWrite(PCA9685_ADDRESS, PRESCALE, prescale) # set the prescaler
+    i2cWrite(PCA9685_ADDRESS, MODE1, oldmode)
+    sleep_us(5000)
+    i2cWrite(PCA9685_ADDRESS, MODE1, oldmode | 0xa1)
 
 def setPwm(channel, on, off):
     if channel < 0 or channel > 15:
         return None
+    on = int(on)
+    off = int(off)
     i2c1.writeto(PCA9685_ADDRESS, bytearray([
         LED0_ON_L + 4 * channel,
         on & 0xff,
