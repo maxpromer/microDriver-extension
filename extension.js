@@ -9,8 +9,8 @@
     blocks: [ // Blocks in Category
         {
             xml: `
-                <block type="iled_show_number">
-                    <value name="number">
+                <block type="microdriver_servo">
+                    <value name="degree">
                         <shadow type="math_number">
                             <field name="NUM">0</field>
                         </shadow>
@@ -20,13 +20,8 @@
         },
         {
             xml: `
-                <block type="iled_show_digit_at">
-                    <value name="number">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                    <value name="pos">
+                <block type="microdriver_motor">
+                    <value name="speed">
                         <shadow type="math_number">
                             <field name="NUM">0</field>
                         </shadow>
@@ -36,8 +31,8 @@
         },
         {
             xml: `
-                <block type="iled_show_char_at">
-                    <value name="pos">
+                <block type="microdriver_stepper_degree_42">
+                    <value name="degree">
                         <shadow type="math_number">
                             <field name="NUM">0</field>
                         </shadow>
@@ -47,22 +42,8 @@
         },
         {
             xml: `
-                <block type="iled_show_hex_number">
-                    <value name="number">
-                        <shadow type="math_number">
-                            <field name="NUM">255</field>
-                        </shadow>
-                    </value>
-                </block>
-            `
-        },
-        "iled_turn_on",
-        "iled_turn_off",
-        "iled_clear",
-        {
-            xml: `
-                <block type="iled_set_dotpoint">
-                    <value name="pos">
+                <block type="microdriver_stepper_turn_42">
+                    <value name="turn">
                         <shadow type="math_number">
                             <field name="NUM">0</field>
                         </shadow>
@@ -70,17 +51,61 @@
                 </block>
             `
         },
-        "iled_set_colon",
         {
             xml: `
-                <block type="iled_set_intensity">
-                    <value name="intensity">
+                <block type="microdriver_stepper_degree_28">
+                    <value name="degree">
                         <shadow type="math_number">
-                            <field name="NUM">15</field>
+                            <field name="NUM">0</field>
                         </shadow>
                     </value>
                 </block>
             `
-        }
+        },
+        {
+            xml: `
+                <block type="microdriver_stepper_turn_28">
+                    <value name="turn">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                </block>
+            `
+        },
+        {
+            xml: `
+                <block type="microdriver_stepper_degree_dual_42">
+                    <value name="degree1">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="degree2">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                </block>
+            `
+        },
+        {
+            xml: `
+                <block type="microdriver_stepper_turn_dual_42">
+                    <value name="turn1">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="turn2">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                </block>
+            `
+        },
+        "microdriver_motor_stop",
+        "microdriver_motor_stop_all",
     ]
 });
