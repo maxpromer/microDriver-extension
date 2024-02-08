@@ -373,12 +373,12 @@ def motorStopAll():
     for idx in range(1, 4):
         motorStop(idx)
 
-
+"""
 # Test
 for i in range(255):
     MotorRun(M1, CW, i)
     MotorRun(M2, CCW, i)
     sleep_ms(50)
-    
+"""
 
 
