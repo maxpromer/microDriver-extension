@@ -221,7 +221,7 @@ def stepperDegree_42(index, direction, degree):
     if degree == 0:
         return None
     Degree = abs(degree)
-    sleep_ms((50000 * Degree) / (360 * 100));  # 100hz
+    sleep_ms(int((50000 * Degree) / (360 * 100)));  # 100hz
     if index == 1:
         motorStop(1)
         motorStop(2)
@@ -248,7 +248,7 @@ def stepperDegree_28(index, direction, degree):
     # setFreq(100)
     setStepper_28(index, Degree > 0)
     Degree = abs(Degree)
-    sleep_ms((1000 * Degree) / 360)
+    sleep_ms(int((1000 * Degree) / 360))
     if index == 1:
         motorStop(1)
         motorStop(2)
@@ -280,14 +280,14 @@ def stepperDegreeDual_42(stepper, direction1, degree1, direction2, degree2):
             timeout1 = (50000 * Degree2) / (360 * 100)
             setStepper_42(0x01, direction1 > 0)
             setStepper_42(0x02, direction2 > 0)
-            sleep_ms(timeout1)
+            sleep_ms(int(timeout1))
             motorStop(3)
             motorStop(4)
         elif Degree2 == 0 and Degree1 > 0:
             timeout1 = (50000 * Degree1) / (360 * 100)
             setStepper_42(0x01, direction1 > 0)
             setStepper_42(0x02, direction2 > 0)
-            sleep_ms(timeout1)
+            sleep_ms(int(timeout1))
             motorStop(1)
             motorStop(2)
         elif Degree2 > Degree1:
@@ -295,10 +295,10 @@ def stepperDegreeDual_42(stepper, direction1, degree1, direction2, degree2):
             timeout2 = (50000 * (Degree2 - Degree1)) / (360 * 100)
             setStepper_42(0x01, direction1 > 0)
             setStepper_42(0x02, direction2 > 0)
-            sleep_ms(timeout1)
+            sleep_ms(int(timeout1))
             motorStop(1)
             motorStop(2)
-            sleep_ms(timeout2)
+            sleep_ms(int(timeout2))
             motorStop(3)
             motorStop(4)
         elif Degree2 < Degree1:
@@ -306,10 +306,10 @@ def stepperDegreeDual_42(stepper, direction1, degree1, direction2, degree2):
             timeout2 = (50000 * (Degree1 - Degree2)) / (360 * 100)
             setStepper_42(0x01, direction1 > 0)
             setStepper_42(0x02, direction2 > 0)
-            sleep_ms(timeout1)
+            sleep_ms(int(timeout1))
             motorStop(3)
             motorStop(4)
-            sleep_ms(timeout2)
+            sleep_ms(int(timeout2))
             motorStop(1)
             motorStop(2)
     elif stepper == 2:
@@ -320,14 +320,14 @@ def stepperDegreeDual_42(stepper, direction1, degree1, direction2, degree2):
             timeout1 = (50000 * Degree2) / (360 * 100)
             setStepper_28(0x01, direction1 > 0)
             setStepper_28(0x02, direction2 > 0)
-            sleep_ms(timeout1)
+            sleep_ms(int(timeout1))
             motorStop(3)
             motorStop(4)
         elif (Degree2 == 0) and (Degree1 > 0):
             timeout1 = (50000 * Degree1) / (360 * 100)
             setStepper_28(0x01, direction1 > 0)
             setStepper_28(0x02, direction2 > 0)
-            sleep_ms(timeout1)
+            sleep_ms(int(timeout1))
             motorStop(1)
             motorStop(2)
         elif Degree2 > Degree1:
@@ -335,10 +335,10 @@ def stepperDegreeDual_42(stepper, direction1, degree1, direction2, degree2):
             timeout2 = (50000 * (Degree2 - Degree1)) / (360 * 100)
             setStepper_28(0x01, direction1 > 0)
             setStepper_28(0x02, direction2 > 0)
-            sleep_ms(timeout1)
+            sleep_ms(int(timeout1))
             motorStop(1)
             motorStop(2)
-            sleep_ms(timeout2)
+            sleep_ms(int(timeout2))
             motorStop(3)
             motorStop(4)
         elif Degree2 < Degree1:
@@ -346,10 +346,10 @@ def stepperDegreeDual_42(stepper, direction1, degree1, direction2, degree2):
             timeout2 = (50000 * (Degree1 - Degree2)) / (360 * 100)
             setStepper_28(0x01, direction1 > 0)
             setStepper_28(0x02, direction2 > 0)
-            sleep_ms(timeout1)
+            sleep_ms(int(timeout1))
             motorStop(3)
             motorStop(4)
-            sleep_ms(timeout2)
+            sleep_ms(int(timeout2))
             motorStop(1)
             motorStop(2)
     else:
