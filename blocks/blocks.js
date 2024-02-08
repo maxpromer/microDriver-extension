@@ -1,251 +1,498 @@
 Blockly.defineBlocksWithJsonArray([
   {
-    "type": "iled_show_number",
-    "message0": Blockly.Msg.ILED_SHOW_NUMBER_MESSAGE,
-    "args0": [
-      {
-        "type": "input_value",
-        "name": "number",
-        "check": "Number"
-      },
-      {
-        "type": "field_number",
-        "name": "decimal",
-        "value": 2,
-        "min": 0,
-        "max": 3
-      }
-    ],
-    "inputsInline": true,
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour": "#2ECC71",
-    "tooltip": Blockly.Msg.ILED_SHOW_NUMBER_TOOLTIP,
-    "helpUrl": ""
-  },
-  {
-    "type": "iled_show_digit_at",
-    "message0": Blockly.Msg.ILED_SHOW_DIGIT_AT_MESSAGE,
-    "args0": [
-      {
-        "type": "input_value",
-        "name": "number",
-        "check": "Number"
-      },
-      {
-        "type": "input_value",
-        "name": "pos",
-        "check": "Number"
-      }
-    ],
-    "inputsInline": true,
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour": "#2ECC71",
-    "tooltip": Blockly.Msg.ILED_SHOW_DIGIT_AT_TOOLTIP,
-    "helpUrl": ""
-  },
-  {
-    "type": "iled_show_char_at",
-    "message0": Blockly.Msg.ILED_SHOW_CHAR_AT_MESSAGE,
+    "type": "microdriver_servo",
+    "message0": "Servo %1 %2 degree %3",
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "char",
+        "name": "index",
         "options": [
           [
-            "0",
-            "0"
+            "S1",
+            "S1"
           ],
           [
-            "1",
+            "S2",
+            "S2"
+          ],
+          [
+            "S3",
+            "S3"
+          ],
+          [
+            "S4",
+            "S4"
+          ],
+          [
+            "S5",
+            "S5"
+          ],
+          [
+            "S6",
+            "S6"
+          ],
+          [
+            "S7",
+            "S7"
+          ],
+          [
+            "S8",
+            "S8"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "degree",
+        "check": "Number"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "#E67E22",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "microdriver_motor",
+    "message0": "Motor %1 dir %2 %3 speed %4",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "index",
+        "options": [
+          [
+            "M1",
+            "M1"
+          ],
+          [
+            "M2",
+            "M2"
+          ],
+          [
+            "M3",
+            "M3"
+          ],
+          [
+            "M4",
+            "M4"
+          ]
+        ]
+      },
+      {
+        "type": "field_dropdown",
+        "name": "dir",
+        "options": [
+          [
+            "CW",
+            "CW"
+          ],
+          [
+            "CCW",
+            "CCW"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "speed",
+        "check": "Number"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "#E67E22",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "microdriver_stepper_degree_42",
+    "message0": "Stepper 42 %1 dir %2 %3 degree %4",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "index",
+        "options": [
+          [
+            "M1_M2",
+            "M1_M2"
+          ],
+          [
+            "M3_M4",
+            "M3_M4"
+          ]
+        ]
+      },
+      {
+        "type": "field_dropdown",
+        "name": "dir",
+        "options": [
+          [
+            "CW",
+            "CW"
+          ],
+          [
+            "CCW",
+            "CCW"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "degree",
+        "check": "Number"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "#E67E22",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "microdriver_stepper_degree_28",
+    "message0": "Stepper 28 %1 dir %2 %3 degree %4",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "index",
+        "options": [
+          [
+            "M1_M2",
+            "M1_M2"
+          ],
+          [
+            "M3_M4",
+            "M3_M4"
+          ]
+        ]
+      },
+      {
+        "type": "field_dropdown",
+        "name": "dir",
+        "options": [
+          [
+            "CW",
+            "CW"
+          ],
+          [
+            "CCW",
+            "CCW"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "degree",
+        "check": "Number"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "#E67E22",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "microdriver_stepper_turn_42",
+    "message0": "Stepper 42 %1 dir %2 %3 turn %4",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "index",
+        "options": [
+          [
+            "M1_M2",
+            "M1_M2"
+          ],
+          [
+            "M3_M4",
+            "M3_M4"
+          ]
+        ]
+      },
+      {
+        "type": "field_dropdown",
+        "name": "dir",
+        "options": [
+          [
+            "CW",
+            "CW"
+          ],
+          [
+            "CCW",
+            "CCW"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "turn",
+        "check": "Number"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "#E67E22",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "microdriver_stepper_turn_28",
+    "message0": "Stepper 28 %1 dir %2 %3 turn %4",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "index",
+        "options": [
+          [
+            "M1_M2",
+            "M1_M2"
+          ],
+          [
+            "M3_M4",
+            "M3_M4"
+          ]
+        ]
+      },
+      {
+        "type": "field_dropdown",
+        "name": "dir",
+        "options": [
+          [
+            "CW",
+            "CW"
+          ],
+          [
+            "CCW",
+            "CCW"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "turn",
+        "check": "Number"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "#E67E22",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "microdriver_stepper_degree_dual_42",
+    "message0": "Dual Stepper 28 %1 %2 M1_M2 dir %3 %4 degree %5 M3_M4 dir %6 %7 degree %8",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "stepper",
+        "options": [
+          [
+            "42",
+            "Ste1"
+          ],
+          [
+            "28",
+            "Ste2"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "direction1",
+        "options": [
+          [
+            "CW",
+            "CW"
+          ],
+          [
+            "CCW",
+            "CCW"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "degree1",
+        "check": "Number"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "direction2",
+        "options": [
+          [
+            "CW",
+            "CW"
+          ],
+          [
+            "CCW",
+            "CCW"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "degree2",
+        "check": "Number"
+      }
+    ],
+    "inputsInline": false,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "#E67E22",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "microdriver_stepper_turn_dual_42",
+    "message0": "Dual Stepper 28 %1 %2 M1_M2 dir %3 %4 turn %5 M3_M4 dir %6 %7 turn %8",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "stepper",
+        "options": [
+          [
+            "42",
             "1"
           ],
           [
-            "2",
+            "28",
             "2"
-          ],
-          [
-            "3",
-            "3"
-          ],
-          [
-            "4",
-            "4"
-          ],
-          [
-            "5",
-            "5"
-          ],
-          [
-            "6",
-            "6"
-          ],
-          [
-            "7",
-            "7"
-          ],
-          [
-            "8",
-            "9"
-          ],
-          [
-            "9",
-            "9"
-          ],
-          [
-            "a",
-            "10"
-          ],
-          [
-            "b",
-            "11"
-          ],
-          [
-            "C",
-            "12"
-          ],
-          [
-            "d",
-            "13"
-          ],
-          [
-            "E",
-            "14"
-          ],
-          [
-            "F",
-            "15"
           ]
         ]
       },
       {
-        "type": "input_value",
-        "name": "pos",
-        "check": "Number"
-      }
-    ],
-    "inputsInline": true,
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour": "#2ECC71",
-    "tooltip": Blockly.Msg.ILED_SHOW_CHAR_AT_TOOLTIP,
-    "helpUrl": ""
-  },
-  {
-    "type": "iled_show_hex_number",
-    "message0": Blockly.Msg.ILED_SHOW_HEX_NUMBER_MESSAGE,
-    "args0": [
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "direction1",
+        "options": [
+          [
+            "CW",
+            "CW"
+          ],
+          [
+            "CCW",
+            "CCW"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
       {
         "type": "input_value",
-        "name": "number",
-        "check": "Number"
-      }
-    ],
-    "inputsInline": true,
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour": "#2ECC71",
-    "tooltip": Blockly.Msg.ILED_SHOW_HEX_NUMBER_TOOLTIP,
-    "helpUrl": ""
-  },
-  {
-    "type": "iled_turn_on",
-    "message0": Blockly.Msg.ILED_TURN_ON_MESSAGE,
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour": "#2ECC71",
-    "tooltip": Blockly.Msg.ILED_TURN_ON_TOOLTIP,
-    "helpUrl": ""
-  },
-  {
-    "type": "iled_turn_off",
-    "message0": Blockly.Msg.ILED_TURN_OFF_MESSAGE,
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour": "#2ECC71",
-    "tooltip": Blockly.Msg.ILED_TURN_OFF_TOOLTIP,
-    "helpUrl": ""
-  },
-  {
-    "type": "iled_clear",
-    "message0": Blockly.Msg.ILED_CLEAR_MESSAGE,
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour": "#2ECC71",
-    "tooltip": Blockly.Msg.ILED_CLEAR_TOOLTIP,
-    "helpUrl": ""
-  },
-  {
-    "type": "iled_set_dotpoint",
-    "message0": Blockly.Msg.ILED_SET_DOTPOINT_MESSAGE,
-    "args0": [
-      {
-        "type": "input_value",
-        "name": "pos",
+        "name": "turn1",
         "check": "Number"
       },
       {
         "type": "field_dropdown",
-        "name": "show",
+        "name": "direction2",
         "options": [
           [
-            Blockly.Msg.ILED_SET_DOTPOINT_TRUE_MESSAGE,
-            "True"
+            "CW",
+            "CW"
           ],
           [
-            Blockly.Msg.ILED_SET_DOTPOINT_FALSE_MESSAGE,
-            "False"
+            "CCW",
+            "CCW"
           ]
         ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "turn2",
+        "check": "Number"
       }
     ],
+    "inputsInline": false,
     "previousStatement": null,
     "nextStatement": null,
-    "colour": "#2ECC71",
-    "tooltip": Blockly.Msg.ILED_SET_DOTPOINT_TOOLTIP,
+    "colour": "#E67E22",
+    "tooltip": "",
     "helpUrl": ""
   },
   {
-    "type": "iled_set_colon",
-    "message0": Blockly.Msg.ILED_SET_COLON_MESSAGE,
+    "type": "microdriver_motor_stop",
+    "message0": "Motor stop %1",
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "show",
+        "name": "index",
         "options": [
           [
-            Blockly.Msg.ILED_SET_DOTPOINT_TRUE_MESSAGE,
-            "True"
+            "M1",
+            "M1"
           ],
           [
-            Blockly.Msg.ILED_SET_DOTPOINT_FALSE_MESSAGE,
-            "False"
+            "M2",
+            "M2"
+          ],
+          [
+            "M3",
+            "M3"
+          ],
+          [
+            "M4",
+            "M4"
           ]
         ]
-      }
-    ],
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour": "#2ECC71",
-    "tooltip": Blockly.Msg.ILED_SET_COLON_TOOLTIP,
-    "helpUrl": ""
-  },
-  {
-    "type": "iled_set_intensity",
-    "message0": Blockly.Msg.ILED_SET_INTENSITY_MESSAGE,
-    "args0": [
-      {
-        "type": "input_value",
-        "name": "intensity",
-        "check": "Number"
       }
     ],
     "inputsInline": true,
     "previousStatement": null,
     "nextStatement": null,
-    "colour": "#2ECC71",
-    "tooltip": Blockly.Msg.ILED_SET_INTENSITY_TOOLTIP,
+    "colour": "#E67E22",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "microdriver_motor_stop_all",
+    "message0": "Motor Stop All",
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "#E67E22",
+    "tooltip": "",
     "helpUrl": ""
   }
 ]);

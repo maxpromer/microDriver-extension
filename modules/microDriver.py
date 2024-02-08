@@ -215,10 +215,10 @@ def stepperDegree_42(index, direction, degree):
     # let Degree = Math.abs(degree);
     # Degree = Degree * direction;
     # setFreq(100);
-    setStepper_42(index, direction > 0);
+    setStepper_42(index, direction > 0)
     if degree == 0:
         return None
-    Degree = abs(degree);
+    Degree = abs(degree)
     sleep_ms((50000 * Degree) / (360 * 100));  # 100hz
     if index == 1:
         motorStop(1)
@@ -258,7 +258,7 @@ def stepperDegree_28(index, direction, degree):
 def stepperTurn_28(index, direction, turn):
     if turn == 0:
         return None
-    degree = turn * 360;
+    degree = turn * 360
     stepperDegree_28(index, direction, degree)
 
 def stepperDegreeDual_42(stepper, direction1, degree1, direction2, degree2):
@@ -353,21 +353,25 @@ def stepperDegreeDual_42(stepper, direction1, degree1, direction2, degree2):
     else:
         pass
 
-def stepperTurnDual_42(stepper, direction1, trun1, direction2, trun2):
-    if trun1 == 0 and trun2 == 0:
+def stepperTurnDual_42(stepper, direction1, turn1, direction2, turn2):
+    if turn1 == 0 and turn2 == 0:
         return None
-    degree1 = trun1 * 360;
-    degree2 = trun2 * 360;
+    degree1 = turn1 * 360
+    degree2 = turn2 * 360
     if stepper == 1:
-        stepperDegreeDual_42(stepper, direction1, degree1, direction2, degree2);
+        stepperDegreeDual_42(stepper, direction1, degree1, direction2, degree2)
     elif stepper == 2:
-        stepperDegreeDual_42(stepper, direction1, degree1, direction2, degree2);
+        stepperDegreeDual_42(stepper, direction1, degree1, direction2, degree2)
     else:
         pass
 
 def motorStop(index):
     setPwm((4 - index) * 2, 0, 0)
     setPwm((4 - index) * 2 + 1, 0, 0)
+
+def motorStopAll():
+    for idx in range(1, 4):
+        motorStop(idx)
 
 
 # Test
