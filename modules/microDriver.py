@@ -372,7 +372,7 @@ def motorStop(index):
     setPwm((4 - index) * 2 + 1, 0, 0)
 
 def motorStopAll():
-    for idx in range(1, 4):
+    for idx in range(1, 5): # 1 - 4
         motorStop(idx)
 
 """
