@@ -94,7 +94,7 @@ Blockly.Python['microdriver_motor_stop'] = function (block) {
 
   var dropdown_index = block.getFieldValue('index');
 
-  var code = `microDriver.motorStop(${dropdown_index})\n`;
+  var code = `microDriver.motorStop(microDriver.${dropdown_index})\n`;
   return code;
 };
 
